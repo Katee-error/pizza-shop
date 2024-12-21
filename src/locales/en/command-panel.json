@@ -1,0 +1,28 @@
+{
+  "search": "Search",
+  "groups": {
+    "user": "Users",
+    "company": "Companies",
+    "beta": "New Beta Feature",
+    "action": "Popular Links",
+    "insight": "Insights",
+    "metric": "Metrics",
+    "leaderboard": "Leaderboards"
+  },
+  "options": {
+    "metrics": "Metrics",
+    "dictionary": "Metrics Library"
+  },
+  "no_results": "No results found",
+  "no_results_caption": "Please try searching for something new.",
+  "contact_support": "Contact Support",
+  "actions": {
+    "ASK_AI": "Ask a Question",
+    "INVITE_TEAM_MEMBER": "Invite Team Member",
+    "ADD_DATA_SOURCE": "Add Data Source",
+    "VIEW_INSIGHTS": "View Insights",
+    "METRICS_DICTIONARY": "Metrics Library",
+    "CREATE_REPORT": "Create Report",
+    "CREATE_ALERT": "Create Alert"
+  }
+}

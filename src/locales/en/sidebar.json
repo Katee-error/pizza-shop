@@ -1,0 +1,26 @@
+{
+  "radar": "Insights",
+  "menu": "Menu",
+  "mission_control": "Metrics",
+  "breakdowns": "Leaderboards",
+  "metrics_dictionary": "Metric Library",
+  "data_sources": "Data Sources",
+  "theme_toggle": "Toggle Theme",
+  "theme_toggle_light_mode": "Light",
+  "theme_toggle_dark_mode": "Dark",
+  "log_out": "Log Out",
+  "toast_invite_copied_title": "Invite Link Copied",
+  "toast_invite_copied_description": "The invite link has been copied to your clipboard.",
+
+  "invite_team_member_card": {
+    "title": "Invite Your Team",
+    "description": "Unlock better data collaboration across teams.",
+    "cta": "Copy Link"
+  },
+
+  "get_better_insights_card": {
+    "title": "Get Better Insights",
+    "description": "Add more integrations to unlock deeper customer insights.",
+    "cta": "Add Integrations"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "active_time_window": {
+    "widget": "Active Time Window",
+    "header": "Change Active-Time Window",
+    "description": "The Active Time Window defines your expected product usage frequency. Users who are active across multiple time windows are considered retained.",
+    "day": {
+      "header": "Daily",
+      "description": "Product used multiple times a day as a part of daily habits. Provides instant benefits or fulfils immediate needs.",
+      "examples": "Email, Zoom, LinkedIn, WhatsApp, News, Fitbit, Monzo"
+    },
+    "week": {
+      "header": "Weekly",
+      "description": "Product used once or a few times per week, often planned like weekly meetings or entertainment. Provides value on a regular, but not daily basis.",
+      "examples": "Hubspot, Canva, Trello, Asana, Deliveroo, Hello Fresh, Calliper"
+    },
+    "month": {
+      "header": "Monthly",
+      "description": "Product used once a month, often connected to long-term tracking, planning, or budgeting. Value is provided in relation to monthly events or responsibilities.",
+      "examples": "Xero, Sterling, DocuSign, Payroll, uDemy"
+    },
+    "update_error": "Failed to update active time window"
+  },
+  "excluded_events": {
+    "widget": "Excluded Events"
+  },
+  "excluded_users": {
+    "widget": "Excluded Users",
+    "header": {
+      "user_id": "Exclude Users by ID",
+      "exact_email": "Exclude Users by Email",
+      "email_domain": "Exclude Users by Email Domain",
+      "group_id": "Exclude Users by Company",
+      "country": "Exclude Users by Country",
+      "default": "Exclude Users"
+    },
+    "description": "Select which users you want to exclude from your product analytics data, usually test or demo accounts.",
+    "total": "Total Excluded Users",
+    "total_count_one": "{{count}} Excluded User",
+    "total_count_other": "{{count}} Excluded Users",
+    "rule_count_one": "{{count}} User",
+    "rule_count_other": "{{count}} Users",
+    "update_error": "Failed to update excluded users",
+    "options_fetch_error": "Failed to fetch options",
+    "rules": {
+      "user_id": "User ID",
+      "exact_email": "User Email",
+      "email_domain": "Email Domain",
+      "group_id": "Companies",
+      "country": "Countries"
+    }
+  },
+  "define_power_user": {
+    "widget": "Power User Event",
+    "header": "Define Power User",
+    "description": "Power users often integrate your product into their core business workflow or habit. In the early stages, it helps picking one user signal to define your power user. Power users are defined within your active time window.",
+    "input": {
+      "first": "Every user who triggers ",
+      "second": " more than ",
+      "third": " times, in "
+    },
+    "update_error": "Failed to update power user event"
+  },
+  "user_signals": {
+    "widget": "Engagement signals",
+    "header": "Change User Signals",
+    "paste_event_here": "Paste event here",
+    "errors": {
+      "empty_field": "Please fill in the field"
+    },
+    "signals": {
+      "onboarded": "Onboarded",
+      "sign_up": "Sign Up",
+      "signal_1": "Signal 1",
+      "signal_2": "Signal 2",
+      "signal_3": "Signal 3",
+      "signal_4": "Signal 4",
+      "signal_5": "Signal 5"
+    },
+    "info_signals": {
+      "header": "How to think about Signals?",
+      "description": "A signal is any event in your product that is tied to a core feature being used and a user receiving value from your product."
+    },
+    "info_errors": {
+      "header": "What mistakes should you avoid?",
+      "description": "You shouldn’t be making a funnel here, these events should be distinct and separate. Ideally these signals should also be tied to how users are charged or where there is potential for users to upgrade if they hit a usage limit."
+    },
+    "update_error": "Failed to update user signals"
+  },
+  "pipelines": {
+    "widget": "Pipelines",
+    "header": "Change Pipelines",
+    "notice": "Selecting multiple pipelines will combine all the deal data from each pipeline.",
+    "update_error": "Failed to update user pipelines"
+  },
+  "won_lost_stages": {
+    "widget": "Won/Lost Stages",
+    "header": "Won/Lost Stages",
+    "update_error": "Failed to update sales stages"
+  },
+  "excluded_deals": {
+    "widget": "Excluded Deals"
+  },
+  "conversion_event": {
+    "widget": "Conversion Event",
+    "update_error": "Failed to update conversion event"
+  },
+  "save": "Save",
+  "coming_soon": "Coming soon",
+  "defined": "Defined",
+  "week": "Week",
+  "month": "Month",
+  "day": "Day",
+  "data_source": "Data Source",
+  "currency": {
+    "widget": "Currency",
+    "header": "Change Currency",
+    "error": "Failed to fetch currencies",
+    "update_error": "Failed to update currency"
+  },
+  "excluded_accounts": {
+    "widget": "Excluded Accounts"
+  },
+  "settings": "Settings",
+  "not_selected": "Not selected",
+  "not_defined": "Not defined",
+  "empty_value": "Input should not be empty",
+  "unassigned": "disabled"
+}

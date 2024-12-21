@@ -1,0 +1,10 @@
+{
+  "modal_title_mobile": "Ops! Calliper is not optimised for mobile yet...",
+  "modal_title_tablet": "Ops! Calliper is not optimised for tablet yet...",
+  "modal_description": "Please use desktop for a more complete experience.",
+  "modal_continue_button": "Continue Anyway",
+  "modal_mobile_request_message": "If you’re really excited about mobile you can help us prioritise this feature below.",
+  "modal_tablet_request_message": "If you’re really excited about tablet you can help us prioritise this feature below.",
+  "modal_request_mobile_button": "Request Mobile Version",
+  "modal_request_tablet_button": "Request Tablet Version"
+}
