@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google"; // ypu can use local font
 import "./globals.css";
+import { Header } from "@/components/layout";
+import { Footer } from "@/components/layout";
 
 const nunito = Nunito({
   subsets: ["cyrillic"],
@@ -21,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.variable}>
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen">
+          <Header />
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

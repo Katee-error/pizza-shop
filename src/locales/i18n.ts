@@ -2,6 +2,7 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import authEN from "./en/auth.json";
+import homePageEn from './en/home-page.json'
 import breakdownsEN from "./en/breakdowns.json";
 import commandPanelEN from "./en/command-panel.json";
 import commonEN from "./en/common.json";
@@ -15,6 +16,7 @@ import viewportModalEN from "./en/viewport-modal.json";
 export const resources = {
   en: {
     auth: authEN,
+    homePage: homePageEn,
     breakdowns: breakdownsEN,
     common: commonEN,
     commandPanelEN,
