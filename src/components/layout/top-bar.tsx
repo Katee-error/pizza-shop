@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils";
 import { Categories } from "../shared/categories";
 import { SortPopup } from "../shared/filters";
 import { Container } from "./container";
+import { Category } from "@prisma/client";
 
 interface Props {
   className?: string;
+  categories: Category[]
 }
 
-export const TopBar: React.FC<Props> = ({ className }) => {
+export const TopBar: React.FC<Props> = ({ categories, className }) => {
   return (
     <div
       className={cn(
@@ -17,7 +19,7 @@ export const TopBar: React.FC<Props> = ({ className }) => {
       )}
     >
       <Container className="flex items-end justify-between ">
-        <Categories />
+        <Categories items={categories} />
         <SortPopup />
       </Container>
     </div>
