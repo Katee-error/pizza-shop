@@ -1,20 +1,21 @@
 "use client";
 import React from "react";
 import { FilterChecboxProps, FilterCheckbox } from "./filter-checkbox";
-import { Input } from "@/components/ui";
-import { HtmlContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints";
+import { Input, Skeleton } from "@/components/ui";
 
 type Item = FilterChecboxProps;
 interface Props {
   className?: string;
   title: string;
   items: Item[];
-  defaultItems: Item[];
+  defaultItems?: Item[];
   limit?: number;
   defaultValue?: string[];
   loading?: boolean;
   searchInputPlaceholder?: string;
-  onChange?: (values: string[]) => void;
+  onClickCheckbox: (id: string) => void;
+  selectedValues: Set<string>;
+  name?: string;
 }
 
 export const FilterCheckboxGroup: React.FC<Props> = ({
@@ -22,22 +23,38 @@ export const FilterCheckboxGroup: React.FC<Props> = ({
   items,
   defaultItems,
   limit = 6,
-  searchInputPlaceholder = "Поиск...",
-  className,
   loading,
-  onChange,
-  defaultValue,
+  searchInputPlaceholder = "Поиск...",
+  onClickCheckbox,
+  selectedValues,
+  className,
+  name
 }) => {
   const [showAll, setShowAll] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
+
+  if (loading) {
+    return (
+      <div className={className}>
+        <p className="font-bold mb-3">{title}</p>
+        {...Array(limit)
+          .fill(0)
+          .map((_, index) => (
+            <Skeleton key={index} className="h-6 mb-4 rounded-[8px]" />
+          ))}
+        <Skeleton className=" w-28 h-6 mb-4 rounded-[8px]" />
+      </div>
+    );
+  }
+
   const defaultProductList = showAll
     ? items.filter((item) =>
         item.text.toLowerCase().includes(searchValue.toLowerCase())
       )
-    : defaultItems?.slice(0, limit);
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div className={className}>
@@ -60,8 +77,8 @@ export const FilterCheckboxGroup: React.FC<Props> = ({
             value={item.value}
             key={i}
             endAdornment={item.endAdornment}
-            // checked={false}
-            onCheckedChange={(ids) => console.log(ids)}
+            checked={selectedValues?.has(item.value)}
+            onCheckedChange={() => onClickCheckbox?.(item.value)}
           />
         ))}
       </div>

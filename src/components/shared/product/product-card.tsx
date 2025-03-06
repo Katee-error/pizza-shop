@@ -20,7 +20,7 @@ export const ProductCard: React.FC<Props> = ({
   name,
   price,
   imageUrl,
-  count,
+  // count,
   id,
 }) => {
   return (

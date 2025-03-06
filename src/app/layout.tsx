@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google"; // ypu can use local font
+import { Nunito } from "next/font/google"; 
 import "./globals.css";
 import { Header } from "@/components/layout";
 import { Footer } from "@/components/layout";

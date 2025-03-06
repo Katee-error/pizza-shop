@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "../ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import { SearchInput } from "../shared/search/search-input";
 
 interface Props {
   className?: string;
@@ -13,7 +14,6 @@ export const Header: React.FC<Props> = ({ className }) => {
   return (
     <header className={cn("border-b border-gray-100", className)}>
       <Container className="flex items-center justify-between py-6">
-        {/* left side */}
         <div className="flex items-center gap-4">
           <Image src="/logo.png" width={35} height={35} alt="Logo" />
           <div>
@@ -23,8 +23,9 @@ export const Header: React.FC<Props> = ({ className }) => {
             </p>
           </div>
         </div>
-        <div className="mx-10 flex-1 ">{/* <SearchInput /> */}</div>
-        {/* rigth side header - basket and button add in the basket */}
+        <div className="mx-10 flex-1 ">
+          <SearchInput />
+        </div>
         <div className="flex items-center gap-3">
           <Button variant="outline">
             <User size={18} />
