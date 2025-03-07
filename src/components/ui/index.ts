@@ -10,3 +10,4 @@ export { Popover } from "./popover";
 export { Skeleton } from "./skeleton";
 export { Slider } from "./slider";
 export { RangeSlider } from "./range-slider";
+export { Title } from "./title";

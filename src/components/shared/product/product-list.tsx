@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { Title } from "../title";
+import { Title } from "../../ui/title";
 import { ProductCard } from "./product-card";
 import { cn } from "@/lib/utils";
 import { useIntersection } from "react-use";

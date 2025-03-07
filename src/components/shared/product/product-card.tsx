@@ -1,4 +1,4 @@
-import { Title } from "../title";
+import { Title } from "../../ui/title";
 import { Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
