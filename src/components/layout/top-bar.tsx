@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 import { Categories } from "../shared/categories";
 import { SortPopup } from "../shared/filters";
 import { Container } from "./container";
@@ -7,7 +7,7 @@ import { Category } from "@prisma/client";
 
 interface Props {
   className?: string;
-  categories: Category[]
+  categories: Category[];
 }
 
 export const TopBar: React.FC<Props> = ({ categories, className }) => {

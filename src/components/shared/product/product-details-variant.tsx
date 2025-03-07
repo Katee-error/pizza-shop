@@ -1,5 +1,5 @@
-'use client'
-import { cn } from "@/lib/utils";
+"use client";
+import { cn } from "@/shared/lib/utils";
 import React from "react";
 
 export type Variant = {
@@ -9,9 +9,9 @@ export type Variant = {
 };
 
 interface Props {
-  items: readonly Variant[];
+  items?: readonly Variant[];
   onClick?: (value: Variant["value"]) => void;
-  selectedValue?: Variant["value"];
+  selectedValue: Variant["value"];
   className?: string;
 }
 export const ProductDetailVariant: React.FC<Props> = ({

@@ -2,11 +2,11 @@ import { notFound } from "next/navigation";
 import { prisma } from "../../../../../prisma/prisma-client";
 import { Container } from "@/components/layout";
 import { ProductImage } from "@/components/shared/product/product-image";
-import { Title } from "@/components/shared";
+
 import { ProductDetailVariant } from "@/components/shared/product/product-details-variant";
+import { Title } from "@/components/ui";
 
 export default async function ProductPage ({ params: { id } }: { params: { id: string } }) {
-  console.log("product id", id);
   const product = await prisma.product.findFirst({ where: { id: Number(id) } });
 
   if (!product) {
