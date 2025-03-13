@@ -6,7 +6,7 @@ interface Props {
   name: string;
   price: number;
   loading?: boolean;
-  onSubmit?: VoidFunction;
+  onSubmit?: () => void;
   className?: string;
 }
 

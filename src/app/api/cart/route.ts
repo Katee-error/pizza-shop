@@ -51,7 +51,9 @@ export async function POST(req: NextRequest) {
 
     if (!token) {
       token = crypto.randomUUID();
-    }
+      const resp = NextResponse.next();
+      resp.cookies.set('cartToken', token);
+    }    
 
     const userCart = await findOrCreateCart(token);
 
@@ -61,13 +63,12 @@ export async function POST(req: NextRequest) {
       where: {
         cartId: userCart.id,
         productItemId: data.productItemId,
-        ingredients: {
-          every: {
-            id: { in: data.ingredients },
-          },
-        },
+        ...(data.ingredients?.length
+          ? { ingredients: { every: { id: { in: data.ingredients } } } }
+          : {}),
       },
     });
+    
 
     // Если товар был найден, делаем +1
     if (findCartItem) {
@@ -91,6 +92,11 @@ export async function POST(req: NextRequest) {
     }
 
     const updatedUserCart = await updateCartTotalAmount(token);
+
+    if (!updatedUserCart) {
+      console.log('Ошибка: Корзина не обновлена!');
+      return NextResponse.json({ message: 'Ошибка обновления корзины' }, { status: 500 });
+    }    
 
     const resp = NextResponse.json(updatedUserCart);
     resp.cookies.set('cartToken', token);
