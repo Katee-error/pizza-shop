@@ -7,8 +7,9 @@ import { useRouter } from "next/navigation";
 import { ChooseProductForm } from "./choose-product-form";
 import { ProductWithRelations } from "../../../../@types/product";
 import { ChoosePizzaForm } from "./choose-pizza-form";
-import { addCartItem } from "@/shared/services/cart";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import toast from "react-hot-toast";
+import { useCartStore } from "@/shared/store/cart";
 
 interface ChooseProductModalProps {
   product: ProductWithRelations;
@@ -21,18 +22,26 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
 }) => {
   const router = useRouter();
   const firstItem = product.variants[0];
-  const onAddProduct = () => {
-    addCartItem({
-      productItemId: firstItem.id,
-    });
-  };
-  const onAddPizza = (productItemId: number, ingredients: number[]) => {
-    addCartItem({
-      productItemId,
-      ingredients,
-    });
-  };
   const isPizzaForm = Boolean(firstItem.pizzaType);
+  const addCartItem = useCartStore((state) => state.addCartItem);
+  const loading = useCartStore((state) => state.loading);
+
+  const onSubmit = async (productItemId?: number, ingredients?: number[]) => {
+    try {
+      const itemId = productItemId ?? firstItem.id;
+
+      await addCartItem({
+        productItemId: itemId,
+        ingredients,
+      });
+
+      toast.success(product.name + " добавлен в корзину");
+      router.back();
+    } catch (error) {
+      toast.error("Не удалось добавить товар в корзину");
+      console.log(error);
+    }
+  };
   return (
     <Dialog open={Boolean(product)} onOpenChange={() => router.back()}>
       <DialogContent
@@ -48,14 +57,16 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
             name={product.name}
             ingredients={product.ingredients}
             items={product.variants}
-            onSubmit={onAddPizza}
+            onSubmit={onSubmit}
+            loading={loading}
           />
         ) : (
           <ChooseProductForm
             imageUrl={product.imageUrl}
             name={product.name}
             price={firstItem.price}
-            onSubmit={onAddProduct}
+            onSubmit={onSubmit}
+            loading={loading}
           />
         )}
       </DialogContent>
