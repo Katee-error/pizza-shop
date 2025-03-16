@@ -12,7 +12,7 @@ interface Props {
 
 export const CartButton: React.FC<Props> = ({ className }) => {
   const totalAmount = useCartStore((state) => state.totalAmount);
-  // const loading = useCartStore((state) => state.loading);
+  const loading = useCartStore((state) => state.loading);
 
   const items = useCartStore((state) => state.items);
   useEffect(() => {
@@ -22,9 +22,8 @@ export const CartButton: React.FC<Props> = ({ className }) => {
   return (
     <CartDrawer>
       <Button
-        // loading={loading}
-        // className={cn("group relative", { "w-[105px]": loading }, className)}
-      >
+        loading={loading}
+        className={cn('group relative', { 'w-[105px]': loading }, className)}>
         <b>{totalAmount} ₽</b>
         <span className="h-full w-[1px] bg-white/30 mx-3" />
         <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">

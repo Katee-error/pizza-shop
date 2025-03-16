@@ -11,3 +11,5 @@ export { Skeleton } from "./skeleton";
 export { Slider } from "./slider";
 export { RangeSlider } from "./range-slider";
 export { Title } from "./title";
+export { RequiredSymbol } from "./required-symbol";
+export { ErrorText } from "./error-text";

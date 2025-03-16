@@ -37,8 +37,8 @@ export default async function Home({
                     <ProductList
                       key={category.id}
                       title={category.name}
-                      categoryId={category.id}
-                      products={category.products}
+                      categoryId={category.id} 
+                      products={category.products}                      
                     />
                   )
               )}
