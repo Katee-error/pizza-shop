@@ -1,8 +1,10 @@
-"use client";
-import { ErrorText, Input, RequiredSymbol } from "@/components/ui";
-import React from "react";
-import { ClearButton } from "../button/clear-button";
-import { useFormContext } from "react-hook-form";
+'use client';
+
+import { useFormContext } from 'react-hook-form';
+import { Input } from '../../ui/input';
+import { ErrorText, RequiredSymbol } from '@/components/ui';
+import { ClearButton } from '../button/clear-button';
+
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -11,13 +13,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
 }
 
-export const FormInput: React.FC<Props> = ({
-  className,
-  name,
-  label,
-  required,
-  ...props
-}) => {
+export const FormInput: React.FC<Props> = ({ className, name, label, required, ...props }) => {
   const {
     register,
     formState: { errors },
@@ -29,7 +25,7 @@ export const FormInput: React.FC<Props> = ({
   const errorText = errors[name]?.message as string;
 
   const onClickClear = () => {
-    setValue(name, "", { shouldValidate: true });
+    setValue(name, '', { shouldValidate: true });
   };
 
   return (
@@ -39,6 +35,7 @@ export const FormInput: React.FC<Props> = ({
           {label} {required && <RequiredSymbol />}
         </p>
       )}
+
       <div className="relative">
         <Input className="h-12 text-md" {...register(name)} {...props} />
 

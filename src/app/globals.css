@@ -80,3 +80,9 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+.react-dadata__input {
+  border-radius: 10px !important;
+  padding: 10px !important;
+  outline: none !important;
+}
