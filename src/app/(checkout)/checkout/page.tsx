@@ -31,12 +31,14 @@ export default function CheckoutPage() {
       firstName: "",
       lastName: "",
       phone: "",
-      adress: "",
+      address: "",
       comment: "",
     },
   });
 
+
   const onSubmit = async (data: CheckoutFormValues) => {
+    console.log(data)
     try {
       setSubmitting(true);
 
@@ -45,9 +47,10 @@ export default function CheckoutPage() {
         icon: '✅',
       });
 
-      if(url) {
-        location.href = url
+      if (typeof url === "string" && url) {
+        location.href = url;
       }
+
     } catch (error) {
       setSubmitting(false);
       console.log(error);
@@ -57,7 +60,7 @@ export default function CheckoutPage() {
     }
   };
 
-
+  console.log(form.formState.errors);
 
   return (
     <Container className="mt-10">
@@ -66,7 +69,7 @@ export default function CheckoutPage() {
         className="font-extrabold mb-8 text-[36px]"
       />
       <FormProvider {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} >
           <div className="flex gap-10">
             <div className="flex flex-col gap-10 flex-1 mb-20">
               <CheckoutCart

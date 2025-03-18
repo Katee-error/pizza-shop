@@ -4,10 +4,10 @@ import { updateCartTotalAmount } from "@/shared/lib/update-cart-total-amount";
 
 export async function PATCH(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const id = Number(context.params.id);
+    const id = Number(params.id);
     if (isNaN(id)) {
       return NextResponse.json(
         { error: "Invalid cart item ID" },
