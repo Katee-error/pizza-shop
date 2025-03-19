@@ -1,6 +1,7 @@
 import { Container, TopBar } from "@/components/layout";
 import { Filters } from "@/components/shared/filters";
 import { ProductList } from "@/components/shared/product";
+import { Stories } from "@/components/shared/stories/stories";
 import { Title } from "@/components/ui";
 import { findPizzas, GetSearchParams } from "@/shared/lib/find-products";
 import { Suspense } from "react";
@@ -22,6 +23,7 @@ export default async function Home({
           (category) => category.products.length > 0
         )}
       />
+      <Stories />
       <Container className="pb-14 mt-10">
         <div className="flex gap-[100px]">
           <div className="w-[250px]">
@@ -37,8 +39,8 @@ export default async function Home({
                     <ProductList
                       key={category.id}
                       title={category.name}
-                      categoryId={category.id} 
-                      products={category.products}                      
+                      categoryId={category.id}
+                      products={category.products}
                     />
                   )
               )}
