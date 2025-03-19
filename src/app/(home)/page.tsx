@@ -33,16 +33,15 @@ export default async function Home({
           </div>
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              {categories.map(
-                (category) =>
-                  category.products.length > 0 && (
-                    <ProductList
-                      key={category.id}
-                      title={category.name}
-                      categoryId={category.id}
-                      products={category.products}
-                    />
-                  )
+              {categories.map((category) =>
+                category.products?.length ? (
+                  <ProductList
+                    key={category.id}
+                    title={category.name}
+                    categoryId={category.id}
+                    items={category.products ?? []} 
+                  />
+                ) : null
               )}
             </div>
           </div>

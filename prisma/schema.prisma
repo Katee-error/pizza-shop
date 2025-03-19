@@ -43,10 +43,10 @@ model Product {
   imageUrl   String
  
   ingredients Ingredient[]
+variants ProductItem[]
 
   category   Category   @relation(fields: [categoryId], references: [id])
   categoryId Int      
-  variants ProductItem[]
 
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
