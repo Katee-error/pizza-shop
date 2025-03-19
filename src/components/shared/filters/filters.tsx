@@ -59,7 +59,6 @@ export const Filters: React.FC<Props> = ({ className }) => {
             placeholder="0"
             min={0}
             max={1000}
-            defaultValue={0}
             value={String(filters.prices.priceFrom)}
             onChange={(e) =>
               filters.setPrices("priceFrom", Number(e.target.value))
