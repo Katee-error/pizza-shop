@@ -1,233 +1,364 @@
 export const categories = [
   {
-    name: "Пиццы",
+    name: "Pizza",
   },
   {
-    name: "Завтрак",
+    name: "Snakes",
   },
   {
-    name: "Закуски",
+    name: "Desserts",
   },
   {
-    name: "Коктейли",
+    name: "Drinks",
   },
   {
-    name: "Напитки",
+    name: "Sauces",
   },
+  {
+    name: "Breakfast",
+  },
+
 ];
 
 export const ingredients = [
   {
-    name: "Сырный бортик",
+    name: "Cheddar cheese Crust",
     price: 179,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/99f5cb91225b4875bd06a26d2e842106.png",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eeedbd0b60e5a4812d238e0a79ac78.png",
   },
   {
-    name: "Сливочная моцарелла",
+    name: "Сhicken",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/cdea869ef287426386ed634e6099a5ba.png",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec19f23e58a7bb203a7857adf710e.png",
   },
   {
-    name: "Сыры чеддер и пармезан",
+    name: "Ham",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA69C1FE796",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec1a05c185d73bf8e6584a9a233b8.png",
   },
   {
-    name: "Острый перец халапеньо",
+    name: "Pepperoni",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/11ee95b6bfdf98fb88a113db92d7b3df.png",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec1a6a737c6e5a7aad83182259828.png",
   },
   {
-    name: "Нежный цыпленок",
+    name: "Spicy chorizo",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA5B328D35A",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec4af2e8c11d8a7dfb5222f1a325a.png",
   },
   {
-    name: "Шампиньоны",
+    name: "Oregano",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3bb8122e51c96d7b468e95c37aa.png",
   },
   {
-    name: "Бекон",
+    name: "Tomatoes",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA637AAB68F",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3bc0a2af1c2b3b9959b55efd730.png",
   },
   {
-    name: "Ветчина",
+    name: "Mushrooms",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA61B9A8D61",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3bc7f35c31795ed766a458e5edd.png",
   },
   {
-    name: "Пикантная пепперони",
+    name: "Red onion",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA6258199C3",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3bde9270ceeb170364a0d3f78a9.png",
   },
   {
-    name: "Острая чоризо",
+    name: "Green pepper",
     price: 79,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA62D5D6027",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3be6a20c3c8964ecde6bfac34e2.png",
   },
   {
-    name: "Маринованные огурчики",
+    name: "Jalapeno",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9EA89958D782B",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec3bea346c7dc85c0344d517bad5a.png",
   },
   {
-    name: "Свежие томаты",
+    name: "Mozzarella",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA7AC1A1D67",
+      "https://cdn.dodostatic.net/static/Img/Ingredients/11eec1a5a3c59c5789cb54ce64311874.png",
   },
   {
-    name: "Красный лук",
+    name: "Bacon",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA60AE6464C",
+      "https://cdn.dodostatic.com/static/Img/Ingredients/01943b6bfbfa7785a479f8b0aa005c27.png",
   },
   {
-    name: "Сочные ананасы",
+    name: "Blue cheese",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A21DA51A81211E9AFA6795BA2A0",
+      "https://cdn.dodostatic.com/static/Img/Ingredients/01943b6b90b973989bc8dab34a4dc009.png",
   },
   {
-    name: "Итальянские травы",
+    name: "Pineapples",
     price: 39,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/370dac9ed21e4bffaf9bc2618d258734.png",
+      "https://cdn.dodostatic.com/static/Img/Ingredients/01943b6b577a796197eec0c9fe0d69ba.png",
   },
   {
-    name: "Сладкий перец",
+    name: "Pickles",
     price: 59,
     imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA63F774C1B",
-  },
-  {
-    name: "Кубики брынзы",
-    price: 79,
-    imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA6B0FFC349",
-  },
-  {
-    name: "Митболы",
-    price: 79,
-    imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/b2f3a5d5afe44516a93cfc0d2ee60088.png",
+      "https://cdn.dodostatic.com/static/Img/Ingredients/01943b6bc5b87233aa985f29d1c85a28.png",
   },
 ].map((obj, index) => ({ id: index + 1, ...obj }));
 
 export const products = [
   {
-    name: "Омлет с ветчиной и грибами",
+    name: "Dodster",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7970321044479C1D1085457A36EB.webp",
+    "https://media.dodostatic.com/image/r:1875x1875/11eec576317664f0b73e9c210ef75caa.avif",
     categoryId: 2,
   },
   {
-    name: "Омлет с пепперони",
+    name: "Spicy Dodster🌶️🌶️",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE94ECF33B0C46BA410DEC1B1DD6F8.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57cd9a8011488fd5af138fd4d13.avif",
     categoryId: 2,
   },
   {
-    name: "Кофе Латте",
+    name: "Pesto dodster",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eee53246b2a477818ac7e7fc96a52a.avif",
     categoryId: 2,
   },
   {
-    name: "Дэнвич ветчина и сыр",
+    name: "Meat starter ",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eee5f6c88ea779891e392fc3bc0033.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Mushroom starter",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eeecdbbba13a91aec81db095125a63.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Cheese starter ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef0898add9b56dad07ae758219ea99.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Dodster with ham ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57c53b26ed4b0ed9cd9a5350245.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Danwich ham and cheese ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec578360fd5028dbff4d01d8ae2b7.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Danwich Chorizo ​BBQ ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57913c65f46bfbf07f213acbf97.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Ceasar salad",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef1b36e1996cf6833003a5107ab6cd.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Greek salad ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef1997296e72128645d2d15b9014f5.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Pasta Carbonara",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57a5bd7250e9b0afbaf20cb32e0.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Hawaiian pasta",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef638d2669d11795b2e17f8c18245b.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Pesto Pasta ",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57b5494bf01bae93593bfa49bb0.avif",
+    categoryId: 2,
+  },
+  {
+    name: "Baked Fries",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec5771de544bfbad5a8b8652e7ecb.avif",
+    categoryId: 2,
+  },
+  {
+    name: "New York Cheesecake",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57fc23475e989640c570cacfb7c.avif",
     categoryId: 3,
   },
   {
-    name: "Куриные наггетсы",
+    name: "Chocolate Souffle",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D618B5C7EC29350069AE9532C6E.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57eff24a7eda124add63354612e.avif",
     categoryId: 3,
   },
   {
-    name: "Картофель из печи с соусом 🌱",
+    name: "Muffin salted caramel",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EED646A9CD324C962C6BEA78124F19.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eed6f2baba83f9ad2e3019d72565a4.avif",
     categoryId: 3,
   },
   {
-    name: "Додстер",
+    name: "Eclairs 3 pieces",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE796F96D11392A2F6DD73599921B9.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eed6f3a7abb22c9fecd66768fe0f5c.avif",
     categoryId: 3,
   },
   {
-    name: "Острый Додстер 🌶️🌶️",
+    name: "Chocolate cookie",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE796FD3B594068F7A752DF8161D04.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eed6f33571882083d67b9848ce8de7.avif",
     categoryId: 3,
   },
   {
-    name: "Банановый молочный коктейль",
+    name: "Rolls with pineapple and ice cream sauce",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eed6f5b8514d5a96078226828e81a0.avif",
+    categoryId: 3,
+  },
+  {
+    name: "Berry rolls",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef1734765479ca9678114ba0600cd0.avif",
+    categoryId: 3,
+  },
+  {
+    name: "Banana milkshake",
     imageUrl:
       "https://media.dodostatic.net/image/r:292x292/11EEE20B8772A72A9B60CFB20012C185.webp",
     categoryId: 4,
   },
   {
-    name: "Карамельное яблоко молочный коктейль",
+    name: "Coffee Americano",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE79702E2A22E693D96133906FB1B8.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec5834f7894e6997b1f5eec52d593.avif",
     categoryId: 4,
   },
   {
-    name: "Молочный коктейль с печеньем Орео",
+    name: "Coffee Cappuccino",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE796FA1F50F8F8111A399E4C1A1E3.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec583d21d304399b9bf0cd3f0607b.avif",
     categoryId: 4,
   },
   {
-    name: "Классический молочный коктейль 👶",
+    name: "Coffee Latte",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE796F93FB126693F96CB1D3E403FB.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec58470c3e30993a87d723055022d.avif",
     categoryId: 4,
   },
   {
-    name: "Ирландский Капучино",
+    name: "Coca-Cola",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61999EBDA59C10E216430A6093.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eec58025f42f8883a44ff3f74c2e85.avif",
+    categoryId: 4,
+  },
+  {
+    name: "Fanta",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eed7f5d7be976f84fb4c56580cdb2a.avif",
+    categoryId: 4,
+  },
+  {
+    name: "Sprite",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec582165399bb8aabb23e10f5cf7b.avif",
+    categoryId: 4,
+  },
+  {
+    name: "Cappy Orange",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef3deab6dae1599c7fbd780cdde560.avif",
+    categoryId: 4,
+  },
+  {
+    name: "Water",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eed7daa98e3a5ea3eb7b250e0223de.avif",
+    categoryId: 4,
+  },
+  {
+    name: "Cheese sauce",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef1c1de3aaa0a78193c3460698f3bd.avif",
     categoryId: 5,
   },
   {
-    name: "Кофе Карамельный капучино",
-    imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61AED6B6D4BFDAD4E58D76CF56.webp",
-    categoryId: 5,
-  },
-  {
-    name: "Кофе Кокосовый латте",
+    name: "Barbecue sauce",
     imageUrl:
       "https://media.dodostatic.net/image/r:292x292/11EE7D61B19FA07090EE88B0ED347F42.webp",
     categoryId: 5,
   },
   {
-    name: "Кофе Американо",
+    name: "Garlic sauce",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61B044583596548A59078BBD33.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eed77e0817f876adc8948640007b01.avif",
     categoryId: 5,
   },
   {
-    name: "Кофе Латте",
+    name: "Dodster",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61B0C26A3F85D97A78FEEE00AD.webp",
-    categoryId: 5,
+      "https://media.dodostatic.com/image/r:1875x1875/11eec576317664f0b73e9c210ef75caa.avif",
+    categoryId: 6,
   },
+  {
+    name: "Cheese starter",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11ef0898add9b56dad07ae758219ea99.avif",
+    categoryId: 6,
+  },
+  {
+    name: "Danwich ham and cheese",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec578360fd5028dbff4d01d8ae2b7.avif",
+    categoryId: 6,
+  },
+  {
+    name: "Dodster with ham",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eec57c53b26ed4b0ed9cd9a5350245.avif",
+    categoryId: 6,
+  },
+  {
+    name: "Meat starter",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eee5f6c88ea779891e392fc3bc0033.avif",
+    categoryId: 6,
+  },
+  {
+    name: "Cinnamon rolls",
+    imageUrl:
+      "https://media.dodostatic.com/image/r:1875x1875/11eed6f508432e0ca19d96c930500106.avif",
+    categoryId: 6,
+  },
+
 ];

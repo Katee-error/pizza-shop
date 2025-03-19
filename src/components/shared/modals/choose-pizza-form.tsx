@@ -50,7 +50,6 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
   const handleClickAdd = () => {
     if (currentItemId) {
-      console.log("Выбранные ингредиенты:", Array.from(selectedIngredients));
       onSubmit(currentItemId, Array.from(selectedIngredients));
     }
   };
@@ -77,8 +76,9 @@ export const ChoosePizzaForm: React.FC<Props> = ({
             onClick={(value) => setType(Number(value) as PizzaType)}
             />
         </div>
-       
-        <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-5">
+       <p className="font-bold mt-6 mb-2 text-lg">Add toppings</p>
+
+        <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-3">
           <div className="grid grid-cols-3 gap-3">
             {ingredients.map((ingredient) => (
               <IngredientItem
