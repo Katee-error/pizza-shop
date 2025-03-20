@@ -1,7 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/providers/probiders";
-
+import { Providers } from "@/components/providers/providers";
+import { CustomCookieBanner } from "@/components/shared/cookie/cookie-banner";
 
 const nunito = Nunito({
   subsets: ["cyrillic"],
@@ -18,7 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.variable}>
         <Providers>{children}</Providers>
-        </body>
+        <CustomCookieBanner />
+      </body>
     </html>
   );
 }
