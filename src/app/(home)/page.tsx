@@ -2,7 +2,6 @@ import { Container, TopBar } from "@/components/layout";
 import { Filters } from "@/components/shared/filters";
 import { ProductList } from "@/components/shared/product";
 import { Stories } from "@/components/shared/stories/stories";
-import { Title } from "@/components/ui";
 import { findPizzas, GetSearchParams } from "@/shared/lib/find-products";
 import { Suspense } from "react";
 

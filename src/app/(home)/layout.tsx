@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout";
+import { Footer, Header } from "@/components/layout";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function HomeLayout({
       </Suspense>
       {children}
       {modal}
+      <Footer/>
     </main>
   );
 }
