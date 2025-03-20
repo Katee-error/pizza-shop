@@ -50,7 +50,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
       <div
         ref={ref}
         className={cn(
-          "flex rounded-2xl flex-1 justify-between relative h-11 z-30",
+          "flex rounded-2xl flex-1 justify-between relative h-9 z-30",
           className
         )}
       >
@@ -58,7 +58,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         <Input
           className="rounded-2xl outline-none w-full bg-gray-50 pl-11"
           type="text"
-          placeholder="Найти пиццу..."
+          placeholder="Search product..."
           onFocus={() => setFocused(true)}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

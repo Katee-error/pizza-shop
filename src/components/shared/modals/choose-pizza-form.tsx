@@ -58,7 +58,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   return (
     <div className={cn(className, "flex flex-1")}>
       <ProductImage imageUrl={imageUrl} size={size} />
-      <div className="w-[490px] bg-[#f7f6f5] p-7">
+      <div className="w-[490px]  p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />
 
         <p className="text-gray-400">{textDetaills}</p>
@@ -96,7 +96,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
           loading={loading}
           onClick={handleClickAdd}
           className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10">
-          Добавить в корзину за {totalPrice} ₽
+          Add to cart for {totalPrice}
         </Button>
       </div>
     </div>

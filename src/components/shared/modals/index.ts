@@ -1,2 +1,3 @@
 export { ChooseProductModal } from "./choose-product-modal";
-export { ChoosePizzaForm } from "./choose-product-form";
+export { ChooseProductForm } from "./choose-product-form";
+export { ChoosePizzaForm } from "./choose-pizza-form";

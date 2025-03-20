@@ -315,7 +315,7 @@ export const products = [
   {
     name: "Barbecue sauce",
     imageUrl:
-      "https://media.dodostatic.net/image/r:292x292/11EE7D61B19FA07090EE88B0ED347F42.webp",
+      "https://media.dodostatic.com/image/r:1875x1875/11eed77dc8bbd0639d4157df0159d52c.avif",
     categoryId: 5,
   },
   {
