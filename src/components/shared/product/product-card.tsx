@@ -25,7 +25,7 @@ export const ProductCard: React.FC<Props> = ({
     <div>
       <Link
         href={`/product/${id}`}
-        className="min-h-[450px] flex flex-col justify-between"
+        className="min-h-[430px] flex flex-col justify-between"
       >
         <div>
           <div className="flex justify-center p-6 bg-secondary rounded-lg h-[260px]">
