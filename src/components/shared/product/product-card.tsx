@@ -1,17 +1,16 @@
 import { Title } from "../../ui/title";
 import { Button } from "@/components/ui";
-import { Ingredient, Toping } from "@prisma/client";
+import { Ingredient } from "@prisma/client";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-
 
 interface Props {
   id: number;
   name: string;
   price: number;
   imageUrl: string;
-  topings: Toping[];
+  ingredients?: Ingredient[];
 }
 
 export const ProductCard: React.FC<Props> = ({
@@ -19,9 +18,9 @@ export const ProductCard: React.FC<Props> = ({
   name,
   price,
   imageUrl,
-  topings,
+  ingredients,
 }) => {
-
+  console.log(ingredients)
   return (
     <div>
       <Link
@@ -35,7 +34,7 @@ export const ProductCard: React.FC<Props> = ({
 
           <Title text={name} size="sm" className="mb-1 mt-3 font-bold" />
           <p className="text-sm text-gray-400">
-            {topings.map((toping) => toping.name).join(", ")}
+            {ingredients?.map((i) => i.name).join(", ")}
           </p>
         </div>
 

@@ -54,6 +54,7 @@ const DEFAULT_MAX_PRICE = 1000;
           },
           include: {
             topings: true,
+            ingredients: true,
             variants: {
               where: {
                 price: {

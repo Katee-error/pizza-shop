@@ -12,6 +12,11 @@ export async function GET(req: NextRequest) {
       },
     },
     take: 5,
+    include: {
+      ingredients: true,
+      topings: true,
+      variants: true,
+    },
   });
 
   return NextResponse.json(products);

@@ -41,16 +41,19 @@ export const ProductList: React.FC<Props> = ({
     <div className={className} id={title} ref={intersectionRef}>
       <Title text={title} size="lg" className="font-extrabold mb-5" />
       <div className={cn("grid grid-cols-3 gap-[50px]", listClassName)}>
-        {items.map((item) => (
-          <ProductCard
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            price={item.variants[0].price}
-            imageUrl={item.imageUrl}
-            topings={item.topings}
-          />
-        ))}
+        {items.map((item) => {
+          console.log("Product ingredients:", item.ingredients); // 👀
+          return (
+            <ProductCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              price={item.variants[0].price}
+              imageUrl={item.imageUrl}
+              ingredients={item.ingredients ?? []}
+            />
+          );
+        })}
       </div>
     </div>
   );
