@@ -59,6 +59,7 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
             items={product.variants}
             onSubmit={onSubmit}
             loading={loading}
+            ingredients={product.ingredients ?? []}
           />
         ) : (
           <ChooseProductForm

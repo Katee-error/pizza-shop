@@ -15,9 +15,6 @@ export const CartButton: React.FC<Props> = ({ className }) => {
   const loading = useCartStore((state) => state.loading);
 
   const items = useCartStore((state) => state.items);
-  useEffect(() => {
-    console.log("Товары в корзине обновились:", items);
-  }, [items]);
 
   return (
     <CartDrawer>

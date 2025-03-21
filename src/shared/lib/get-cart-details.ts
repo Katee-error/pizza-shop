@@ -21,6 +21,7 @@ export const getCartDetails = (data: CartDTO): ReturnProps => {
         name: toping.name,
         price: toping.price,
       })),
+
     })) as CartStateItem[];
   
     return {

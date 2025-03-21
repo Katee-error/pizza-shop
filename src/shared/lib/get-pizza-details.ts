@@ -8,21 +8,22 @@ export const getPizzaDetails = (
   items: ProductItem[],
   topings: Toping[],
   selectedToping: Set<number>,
-  // ingredients?: Ingredient[]
+  ingredients: Ingredient[]
 ) => {
   const totalPrice = calcTotalPizzaPrice(
     type,
     size,
     items,
     topings,
-    selectedToping
+    selectedToping,
   );
   const baseText = `${size} см, ${mapPizzaType[type]} pizza`;
 
-  // const ingredientNames = ingredients?.map((i) => i.name).join(", ");
+  // const ingredientNames = ingredients.map((i) => i.name).join(", ");
   // const fullText = ingredientNames
-  //   ? `${baseText}, ингредиенты: ${ingredientNames}`
-  //   : baseText;
+  // ? `${baseText}.\nIngredients: ${ingredientNames}.`
+  // : `${baseText}.`;
+
 
   return { totalPrice, textDetaills: baseText };
 };

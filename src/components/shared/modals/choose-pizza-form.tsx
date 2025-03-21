@@ -12,6 +12,7 @@ interface Props {
   imageUrl: string;
   name: string;
   topings: Toping[];
+  ingredients: Ingredient[];
   items: ProductItem[];
   loading?: boolean;
   onSubmit: (itemId: number, topings: number[]) => void;
@@ -23,6 +24,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   items,
   imageUrl,
   topings,
+  ingredients,
   loading,
   onSubmit,
   className,
@@ -44,6 +46,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     items,
     topings,
     selectedToping,
+    ingredients
   );
 
   const handleClickAdd = () => {
@@ -59,6 +62,10 @@ export const ChoosePizzaForm: React.FC<Props> = ({
         <Title text={name} size="md" className="font-extrabold mb-1" />
 
         <p className="text-gray-400">{textDetaills}</p>
+
+        <p className="text-gray-600 mt-1">
+          {ingredients.map((i) => i.name).join(", ")}
+        </p>
 
         <div className="flex flex-col gap-4 mt-5">
           <ProductDetailVariant

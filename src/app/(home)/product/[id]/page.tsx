@@ -8,6 +8,7 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
     where: { id: Number(id) },
     include: {
       topings: true,
+      ingredients: true,
       category: {
         include: {
           products: {

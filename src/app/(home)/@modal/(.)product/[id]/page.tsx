@@ -10,6 +10,7 @@ export default async function ProductModalPage({ params: { id } }: { params: { i
     },
     include: {
       topings: true,
+      ingredients: true,
       variants: true,
     },
   });

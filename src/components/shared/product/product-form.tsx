@@ -44,6 +44,7 @@ export const ProductForm: React.FC<Props> = ({
         imageUrl={product.imageUrl}
         name={product.name}
         topings={product.topings}
+        ingredients={product.ingredients ?? []}
         items={product.variants}
         onSubmit={onSubmit}
         loading={loading}

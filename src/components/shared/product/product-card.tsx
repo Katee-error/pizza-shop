@@ -20,7 +20,6 @@ export const ProductCard: React.FC<Props> = ({
   imageUrl,
   ingredients,
 }) => {
-  console.log(ingredients)
   return (
     <div>
       <Link
