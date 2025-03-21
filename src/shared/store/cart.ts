@@ -13,7 +13,7 @@ export type CartStateItem = {
     disabled?: boolean;
     pizzaSize?: number | null;
     pizzaType?: number | null;
-    ingredients: Array<{ name: string; price: number }>;
+    topings: Array<{ name: string; price: number }>;
   };
   
   export interface CartState {

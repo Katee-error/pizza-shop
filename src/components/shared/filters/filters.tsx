@@ -2,15 +2,15 @@
 import { Title } from "../../ui/title";
 import { FilterCheckboxGroup } from "./filter-checkbox-group";
 import { Input, RangeSlider } from "@/components/ui";
-import { useQueryFilters, useIngredients, useFilters } from "@/shared/hooks";
+import { useQueryFilters, useTopings, useFilters } from "@/shared/hooks";
 
 interface Props {
   className?: string;
 }
 
 export const Filters: React.FC<Props> = ({ className }) => {
-  const { ingredients, loading } = useIngredients();
-  const items = ingredients.map((item) => ({
+  const { topings, loading } = useTopings();
+  const items = topings.map((item) => ({
     value: String(item.id),
     text: item.name,
   }));
@@ -87,15 +87,15 @@ export const Filters: React.FC<Props> = ({ className }) => {
         />
       </div>
       <FilterCheckboxGroup
-        title={"Ingredients"}
-        name="ingredients"
+        title={"Topings"}
+        name="topings"
         className="mt-5"
         items={items}
         limit={6}
         loading={loading}
-        selectedValues={filters.selectedIngredients}
+        selectedValues={filters.selectedTopings}
         defaultItems={items.slice(0, 6)}
-        onClickCheckbox={filters.setSelectedIngredients}
+        onClickCheckbox={filters.setSelectedTopings}
       />
     </div>
   );

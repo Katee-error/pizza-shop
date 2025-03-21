@@ -1,10 +1,10 @@
-import { Cart, CartItem, Ingredient, Product, ProductItem } from '@prisma/client';
+import { Cart, CartItem, Product, ProductItem, Toping } from '@prisma/client';
 
 export type CartItemDTO = CartItem & {
   productItem: ProductItem & {
     product: Product;
   };
-  ingredients: Ingredient[];
+  topings: Toping[];
 };
 
 export interface CartDTO extends Cart {
@@ -13,5 +13,5 @@ export interface CartDTO extends Cart {
 
 export interface CreateCartItemValues {
   productItemId: number;
-  ingredients?: number[];
+  topings?: number[];
 }

@@ -1,8 +1,7 @@
-import { Prisma } from '@prisma/client';
-
-import { prisma } from './prisma-client';
-import { hashSync } from 'bcrypt';
-import { categories, ingredients, products } from './model';
+import { Prisma } from "@prisma/client";
+import { prisma } from "./prisma-client";
+import { hashSync } from "bcrypt";
+import { categories, topings, products } from "./model";
 
 const randomDecimalNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min) * 10 + min * 10) / 10;
@@ -29,18 +28,18 @@ async function up() {
   await prisma.user.createMany({
     data: [
       {
-        fullName: 'User Test',
-        email: 'user@test.ru',
-        password: hashSync('111111', 10),
+        fullName: "User Test",
+        email: "user@test.ru",
+        password: hashSync("111111", 10),
         verified: new Date(),
-        role: 'USER',
+        role: "USER",
       },
       {
-        fullName: 'Admin Admin',
-        email: 'admin@test.ru',
-        password: hashSync('111111', 10),
+        fullName: "Admin Admin",
+        email: "admin@test.ru",
+        password: hashSync("111111", 10),
         verified: new Date(),
-        role: 'ADMIN',
+        role: "ADMIN",
       },
     ],
   });
@@ -49,8 +48,8 @@ async function up() {
     data: categories,
   });
 
-  await prisma.ingredient.createMany({
-    data: ingredients,
+  await prisma.toping.createMany({
+    data: topings,
   });
 
   await prisma.product.createMany({
@@ -59,234 +58,449 @@ async function up() {
 
   const pizza1 = await prisma.product.create({
     data: {
-      name: 'Meaty with ajika',
+      name: "Meaty with ajika",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/0194b675952f74adb25ac725a1fdded9.webp',
+        "https://media.dodostatic.com/image/r:584x584/0194b675952f74adb25ac725a1fdded9.webp",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "ham" },
+          { name: "pepperoni" },
+          { name: "mozzarella" },
+          { name: "tomato saucе" },
+          { name: "chorizo" },
+          { name: "ajika sauce" },
+          { name: "pepperoni" },
+        ],
       },
     },
   });
 
   const pizza2 = await prisma.product.create({
     data: {
-      name: 'Sweet pizza pie',
+      name: "Sweet pizza pie",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/0193ba571345743db8a6758bb6a480ec.avif',
+        "https://media.dodostatic.com/image/r:584x584/0193ba571345743db8a6758bb6a480ec.avif",
       categoryId: 1,
+      topings: {
+        connect: topings.slice(0, 1),
+      },
       ingredients: {
-        connect: ingredients.slice(0,1),
+        create: [
+          { name: "Berries" },
+          { name: "pineapple" },
+          { name: "condensed milk" },
+          { name: "mozzarella" },
+          { name: "tomato saucе" },
+          { name: "chorizo" },
+          { name: "ajika sauce" },
+          { name: "pepperoni" },
+        ],
       },
     },
   });
 
   const pizza3 = await prisma.product.create({
     data: {
-      name: 'Pizza pastrami',
+      name: "Pizza pastrami",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/01958f430122789e975f705c3556e07f.avif',
+        "https://media.dodostatic.com/image/r:584x584/01958f430122789e975f705c3556e07f.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Pizza sauce" },
+          { name: "mozzarella" },
+          { name: "onion" },
+          { name: "pepper" },
+          { name: "tomatoes" },
+          { name: "ginger sauce" },
+          { name: "pastrami" },
+          { name: "dry garlic" },
+        ],
       },
     },
   });
   const pizza4 = await prisma.product.create({
     data: {
-      name: 'Meaty mix',
+      name: "Meaty mix",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11efa00fc3e762b48bda77e6be758a14.avif',
+        "https://media.dodostatic.com/image/r:584x584/11efa00fc3e762b48bda77e6be758a14.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Pepperoni" },
+          { name: "mozzarella" },
+          { name: "tomato saucе" },
+          { name: "mortadella" },
+          { name: "pastrami" },
+          { name: "bacon" },
+        ],
       },
     },
   });
   const pizza5 = await prisma.product.create({
     data: {
-      name: 'Dodo',
+      name: "Dodo",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eed854f2297224aed4d023a434721c.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eed854f2297224aed4d023a434721c.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Bacon" },
+          { name: "chicken fillet" },
+          { name: "pepperoni" },
+          { name: "mozzarella" },
+          { name: "tomatoes" },
+          { name: "mushrooms" },
+          { name: "green pepper" },
+          { name: "red onion" },
+          { name: "dry garlic" },
+          { name: "pizza sauce" },
+        ],
       },
     },
   });
   const pizza6 = await prisma.product.create({
     data: {
-      name: 'Chorizo fresh',
+      name: "Chorizo fresh",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eec4b03a33b20dbeada74187bb7b57.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eec4b03a33b20dbeada74187bb7b57.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Spicy chorizo" },
+          { name: "mozzarella" },
+          { name: "green pepper" },
+          { name: "tomato saucе" },
+          { name: "tomatoes" },
+          { name: "mushrooms" },
+          { name: "green pepper" },
+          { name: "red onion" },
+          { name: "dry garlic" },
+          { name: "pizza sauce" },
+        ],
       },
     },
   });
   const pizza7 = await prisma.product.create({
     data: {
-      name: 'Pesto pizza',
+      name: "Pesto pizza",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec563863b334db30ff678fa43e096.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec563863b334db30ff678fa43e096.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "pesto sauce" },
+          { name: "feta cheese" },
+          { name: "tomatoes" },
+          { name: "mozzarella" },
+          { name: "alfredo sauce" },
+        ],
       },
     },
   });
   const pizza8 = await prisma.product.create({
     data: {
-      name: 'Pizza Julien',
+      name: "Pizza Julien",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eec4b2f394cdaeb93192e939527270.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eec4b2f394cdaeb93192e939527270.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "mushrooms" },
+          { name: "mushroom sauce" },
+          { name: "red onion" },
+          { name: "dry garlic" },
+          { name: "mozzarella" },
+          { name: "alfredo sauce" },
+          { name: "cheese blend chedder ang parmesan" },
+        ],
       },
     },
   });
   const pizza9 = await prisma.product.create({
     data: {
-      name: 'Arriva!',
+      name: "Arriva!",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec566b2abbaae9191035e3bce5733.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec566b2abbaae9191035e3bce5733.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "chorizo" },
+          { name: "burger sauce" },
+          { name: "green pepper" },
+          { name: "red onion" },
+          { name: "tomatoes" },
+          { name: "mozzarella" },
+          { name: "garlic ranch sauce" },
+          { name: "dry garlic" },
+        ],
       },
     },
   });
   const pizza10 = await prisma.product.create({
     data: {
-      name: 'Cheese pizza',
+      name: "Cheese pizza",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec4ac84e99117a83bdb8e08b0727b.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec4ac84e99117a83bdb8e08b0727b.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Mozzarella" },
+          { name: "cheddar and parmesan cheeses" },
+          { name: "Alfredo sauce" },
+        ],
       },
     },
   });
   const pizza11 = await prisma.product.create({
     data: {
-      name: 'Pepperoni fresh',
+      name: "Pepperoni fresh",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec4aebae7a579b6b226a12dc0c261.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec4aebae7a579b6b226a12dc0c261.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Pepperoni" },
+          { name: "mozzarella" },
+          { name: "tomatoes" },
+          { name: "tomato saucе" },
+        ],
       },
     },
   });
   const pizza12 = await prisma.product.create({
     data: {
-      name: 'Margherita',
+      name: "Margherita",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eec3c35eeac2d49e7a4479d50aa926.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eec3c35eeac2d49e7a4479d50aa926.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Tomato sauce" },
+          { name: "mozzarella" },
+          { name: "tomatoes" },
+          { name: "oregano" },
+        ],
       },
     },
   });
   const pizza13 = await prisma.product.create({
     data: {
-      name: 'Ham & Cheese',
+      name: "Ham & Cheese",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eec3c44c8a9a739c7bcf4cb340c09c.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eec3c44c8a9a739c7bcf4cb340c09c.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Alfredo sauce" },
+          { name: "mozzarella" },
+          { name: "ham" },
+        ],
       },
     },
   });
   const pizza14 = await prisma.product.create({
     data: {
-      name: 'Ham and mushrooms',
+      name: "Ham and mushrooms",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eed176b5260a8bb06fac9778d82ae0.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eed176b5260a8bb06fac9778d82ae0.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Ham" },
+          { name: "mushrooms" },
+          { name: "mozzarella" },
+          { name: "pizza sauce" },
+        ],
       },
     },
   });
   const pizza15 = await prisma.product.create({
     data: {
-      name: 'Double chicken',
+      name: "Double chicken",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eed1763ee63349ba0ed174286f0232.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eed1763ee63349ba0ed174286f0232.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "alfredo sauce" },
+          { name: "mozzarella" },
+        ],
       },
     },
   });
   const pizza16 = await prisma.product.create({
     data: {
-      name: 'Burger pizza',
+      name: "Burger pizza",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec56831956a049579024842952c6a.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec56831956a049579024842952c6a.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Ham" },
+          { name: "tomatoes" },
+          { name: "red onion" },
+          { name: "dry garlic" },
+          { name: "burger sauce" },
+          { name: "mozzarella" },
+          { name: "pizza sauce" },
+          { name: "pickles" },
+        ],
       },
     },
   });
   const pizza17 = await prisma.product.create({
     data: {
-      name: 'Four seasons',
+      name: "Four seasons",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eed1777aabb06b92c5aa3d70e65605.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eed1777aabb06b92c5aa3d70e65605.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Mozzarella" },
+          { name: "ham" },
+          { name: "pepperoni" },
+          { name: "feta cheese" },
+          { name: "tomatoes" },
+          { name: "mushrooms" },
+          { name: "Italian herbs" },
+          { name: "pecial tomato sauce" },
+        ],
       },
     },
   });
   const pizza18 = await prisma.product.create({
     data: {
-      name: 'Hawaiian',
+      name: "Hawaiian",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eec56ab6ea26d68cf2f4f72809c471.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eec56ab6ea26d68cf2f4f72809c471.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Chicken" },
+          { name: "pineapples" },
+          { name: "mozzarella" },
+          { name: "alfredo sauce" },
+        ],
       },
     },
   });
   const pizza19 = await prisma.product.create({
     data: {
-      name: 'Vegetables and mushrooms',
+      name: "Vegetables and mushrooms",
       imageUrl:
-        'https://media.dodostatic.com/image/r:584x584/11eed178363e7a42a491b14a5ed9e855.avif',
+        "https://media.dodostatic.com/image/r:584x584/11eed178363e7a42a491b14a5ed9e855.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Mushrooms" },
+          { name: "tomatoes" },
+          { name: "sweet pepper" },
+          { name: "red onion" },
+          { name: "feta cheese" },
+          { name: "mozzarella" },
+          { name: "pizza sauce" },
+        ],
       },
     },
   });
   const pizza20 = await prisma.product.create({
     data: {
-      name: 'Four Cheese',
+      name: "Four Cheese",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eed5305389a6ada9ac1df3c6498dc9.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eed5305389a6ada9ac1df3c6498dc9.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Blue cheese" },
+          { name: "cheddar and parmesan cheeses blend" },
+          { name: "mozzarella" },
+          { name: "signature alfredo sauce" },
+        ],
       },
     },
   });
   const pizza21 = await prisma.product.create({
     data: {
-      name: 'Chicken BBQ',
+      name: "Chicken BBQ",
       imageUrl:
-        '	https://media.dodostatic.com/image/r:584x584/11eed530b7932a07a84baf28985b4182.avif',
+        "	https://media.dodostatic.com/image/r:584x584/11eed530b7932a07a84baf28985b4182.avif",
       categoryId: 1,
+      topings: {
+        connect: topings,
+      },
       ingredients: {
-        connect: ingredients,
+        create: [
+          { name: "Tomato sauce" },
+          { name: "chicken" },
+          { name: "mozzarella" },
+          { name: "red onions" },
+          { name: "barbecue sauce" },
+          { name: "bacon" },
+        ],
       },
     },
   });
@@ -419,7 +633,6 @@ async function up() {
       generateProductItem({ productId: pizza21.id, pizzaType: 1, size: 35 }),
       generateProductItem({ productId: pizza21.id, pizzaType: 2, size: 30 }),
       generateProductItem({ productId: pizza21.id, pizzaType: 2, size: 35 }),
-   
 
       // Остальные продукты
       generateProductItem({ productId: 1 }),
@@ -470,12 +683,12 @@ async function up() {
       {
         userId: 1,
         totalAmount: 0,
-        token: '11111',
+        token: "11111",
       },
       {
         userId: 2,
         totalAmount: 0,
-        token: '222222',
+        token: "222222",
       },
     ],
   });
@@ -485,7 +698,7 @@ async function up() {
       productItemId: 1,
       cartId: 1,
       quantity: 2,
-      ingredients: {
+      topings: {
         connect: [{ id: 1 }, { id: 2 }, { id: 3 }],
       },
     },
@@ -495,27 +708,27 @@ async function up() {
     data: [
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496',
+          "https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496",
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640',
+          "https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640",
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020',
+          "https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020",
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958',
+          "https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958",
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737',
+          "https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737",
       },
       {
         previewImageUrl:
-          'https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284',
+          "https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284",
       },
     ],
   });
@@ -525,27 +738,27 @@ async function up() {
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE',
+          "https://cdn.inappstory.ru/file/dd/yj/sx/oqx9feuljibke3mknab7ilb35t.webp?k=IgAAAAAAAAAE",
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE',
+          "https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE",
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE',
+          "https://cdn.inappstory.ru/file/ts/p9/vq/zktyxdxnjqbzufonxd8ffk44cb.webp?k=IgAAAAAAAAAE",
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE',
+          "https://cdn.inappstory.ru/file/ur/uq/le/9ufzwtpdjeekidqq04alfnxvu2.webp?k=IgAAAAAAAAAE",
       },
       {
         storyId: 1,
         sourceUrl:
-          'https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE',
+          "https://cdn.inappstory.ru/file/sy/vl/c7/uyqzmdojadcbw7o0a35ojxlcul.webp?k=IgAAAAAAAAAE",
       },
     ],
   });
@@ -557,6 +770,7 @@ async function down() {
   await prisma.$executeRaw`TRUNCATE TABLE "Cart" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "CartItem" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Ingredient" RESTART IDENTITY CASCADE`;
+  await prisma.$executeRaw`TRUNCATE TABLE "Toping" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "Product" RESTART IDENTITY CASCADE`;
   await prisma.$executeRaw`TRUNCATE TABLE "ProductItem" RESTART IDENTITY CASCADE`;
 }

@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
                 product: true,
               },
             },
-            ingredients: true,
+            topings: true,
           },
         },
       },
@@ -63,8 +63,8 @@ export async function POST(req: NextRequest) {
       where: {
         cartId: userCart.id,
         productItemId: data.productItemId,
-        ...(data.ingredients?.length
-          ? { ingredients: { every: { id: { in: data.ingredients } } } }
+        ...(data.topings?.length
+          ? { topings: { every: { id: { in: data.topings } } } }
           : {}),
       },
     });
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
           cartId: userCart.id,
           productItemId: data.productItemId,
           quantity: 1,
-          ingredients: { connect: data.ingredients?.map((id) => ({ id })) },
+          topings: { connect: data.topings?.map((id) => ({ id })) },
         },
       });
     }

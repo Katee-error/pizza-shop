@@ -20,13 +20,13 @@ export const ProductForm: React.FC<Props> = ({
   const firstItem = product.variants[0];
   const isPizzaForm = Boolean(firstItem.pizzaType);
 
-  const onSubmit = async (productItemId?: number, ingredients?: number[]) => {
+  const onSubmit = async (productItemId?: number, topings?: number[]) => {
     try {
       const itemId = productItemId ?? firstItem.id;
 
       await addCartItem({
         productItemId: itemId,
-        ingredients,
+        topings: topings ?? [],
       });
 
       toast.success(product.name + " добавлена в корзину");
@@ -43,7 +43,7 @@ export const ProductForm: React.FC<Props> = ({
       <ChoosePizzaForm
         imageUrl={product.imageUrl}
         name={product.name}
-        ingredients={product.ingredients}
+        topings={product.topings}
         items={product.variants}
         onSubmit={onSubmit}
         loading={loading}

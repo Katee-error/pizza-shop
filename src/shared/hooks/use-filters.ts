@@ -10,21 +10,21 @@ interface PriceProps {
 export interface QueryFilters extends PriceProps {
   pizzaTypes: string;
   sizes: string;
-  ingredients: string;
+  topings: string;
 }
 
 export interface Filter {
   sizes: Set<string>;
   pizzaTypes: Set<string>;
   prices: PriceProps;
-  selectedIngredients: Set<string>;
+  selectedTopings: Set<string>;
 }
 
 interface ReturnProps extends Filter {
   setPrices: (name: keyof PriceProps, value: number) => void;
   setSizes: (key: string) => void;
   setPizzaTypes: (key: string) => void;
-  setSelectedIngredients: (key: string) => void;
+  setSelectedTopings: (key: string) => void;
 }
 
 export const useFilters = (): ReturnProps => {
@@ -33,8 +33,8 @@ export const useFilters = (): ReturnProps => {
     string
   >;
 
-  const [selectedIngredients, { toggle: toggleIngredients }] = useSet(
-    new Set<string>(searchParams.get("ingredients")?.split(","))
+  const [selectedTopings, { toggle: toggleTopings }] = useSet(
+    new Set<string>(searchParams.get("topings")?.split(","))
   );
 
   const [sizes, { toggle: toggleSizes }] = useSet(
@@ -67,13 +67,13 @@ export const useFilters = (): ReturnProps => {
     () => ({
       sizes,
       pizzaTypes,
-      selectedIngredients,
+      selectedTopings,
       prices,
       setPrices: updatePrices,
       setPizzaTypes: togglePizzaTypes,
       setSizes: toggleSizes,
-      setSelectedIngredients: toggleIngredients,
+      setSelectedTopings: toggleTopings,
     }),
-    [sizes, pizzaTypes, selectedIngredients, prices],
+    [sizes, pizzaTypes, selectedTopings, prices],
   );
 };

@@ -32,7 +32,7 @@ export const CheckoutCart: React.FC<Props> = ({
                 id={item.id}
                 imageUrl={item.imageUrl}
                 details={getCartItemDetails(
-                  item.ingredients,
+                  item.topings,
                   item.pizzaType as PizzaType,
                   item.pizzaSize as PizzaSize,
                 )}

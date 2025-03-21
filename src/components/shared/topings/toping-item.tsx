@@ -10,7 +10,7 @@ interface Props {
   onClick?: () => void;
   className?: string;
 }
-export const IngredientItem: React.FC<Props> = ({
+export const TopingItem: React.FC<Props> = ({
   className,
   active,
   price,

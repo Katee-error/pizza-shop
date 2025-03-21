@@ -20,7 +20,7 @@ export const categories = [
 
 ];
 
-export const ingredients = [
+export const topings = [
   {
     name: "Cheddar cheese Crust",
     price: 179,

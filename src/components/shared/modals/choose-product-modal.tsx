@@ -26,13 +26,13 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
   const addCartItem = useCartStore((state) => state.addCartItem);
   const loading = useCartStore((state) => state.loading);
 
-  const onSubmit = async (productItemId?: number, ingredients?: number[]) => {
+  const onSubmit = async (productItemId?: number, topings?: number[]) => {
     try {
       const itemId = productItemId ?? firstItem.id;
 
       await addCartItem({
         productItemId: itemId,
-        ingredients,
+        topings,
       });
 
       toast.success(product.name + " добавлен в корзину");
@@ -55,7 +55,7 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
           <ChoosePizzaForm
             imageUrl={product.imageUrl}
             name={product.name}
-            ingredients={product.ingredients}
+            topings={product.topings}
             items={product.variants}
             onSubmit={onSubmit}
             loading={loading}

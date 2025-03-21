@@ -25,7 +25,7 @@ export async function createOrder(data: CheckoutFormValues) {
         user: true,
         items: {
           include: {
-            ingredients: true,
+            topings: true,
             productItem: {
               include: {
                 product: true,

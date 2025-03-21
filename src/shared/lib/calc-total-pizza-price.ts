@@ -1,4 +1,4 @@
-import { Ingredient, ProductItem } from '@prisma/client';
+import { ProductItem, Toping } from '@prisma/client';
 import { PizzaSize, PizzaType } from '../constants/pizza';
 
 /**
@@ -7,8 +7,8 @@ import { PizzaSize, PizzaType } from '../constants/pizza';
  * @param type - тип теста выбранной пиццы
  * @param size - размер выбранной пиццы
  * @param items - список вариаций
- * @param ingredients - список ингредиентов
- * @param selectedIngredients - выбранные ингредиенты
+ * @param topings - список ингредиентов
+ * @param selectedToping - выбранные ингредиенты
  *
  * @returns number общую стоимость
  */
@@ -16,16 +16,16 @@ export const calcTotalPizzaPrice = (
   type: PizzaType,
   size: PizzaSize,
   items: ProductItem[],
-  ingredients: Ingredient[],
-  selectedIngredients: Set<number>,
+  topings: Toping[],
+  selectedToping: Set<number>,
 ) => {
   const pizzaPrice =
     items.find((item) => item.pizzaType === type && item.size === size)?.price || 0;
 
-  const totalIngredientsPrice = ingredients
-    .filter((ingredient) => selectedIngredients.has(ingredient.id))
-    .reduce((acc, ingredient) => acc + ingredient.price, 0);
+  const totalTopingsPrice = topings
+    .filter((toping) => selectedToping.has(toping.id))
+    .reduce((acc, toping) => acc + toping.price, 0);
 
-  return pizzaPrice + totalIngredientsPrice;
+  return pizzaPrice + totalTopingsPrice;
 };
 

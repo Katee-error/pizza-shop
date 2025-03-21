@@ -13,7 +13,7 @@ export const useQueryFilters = (filters: Filter) => {
       ...filters.prices,
       sizes: Array.from(filters.sizes),
       pizzaTypes: Array.from(filters.pizzaTypes),
-      ingredients: Array.from(filters.selectedIngredients),
+      topings: Array.from(filters.selectedTopings),
     };
 
     const query = qs.stringify(params, {

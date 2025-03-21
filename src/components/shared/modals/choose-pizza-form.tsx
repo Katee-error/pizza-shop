@@ -1,20 +1,20 @@
 import { cn } from "@/shared/lib/utils";
-import { Ingredient, ProductItem } from "@prisma/client";
+import { Ingredient, ProductItem, Toping } from "@prisma/client";
 import { Button, Title } from "@/components/ui";
 import { ProductImage } from "../product/product-image";
 import { ProductDetailVariant } from "../product/product-details-variant";
 import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
-import { IngredientItem } from "../ingredients/ingredient-item";
+import { TopingItem } from "../topings/toping-item";
 import { usePizzaOptions } from "@/shared/hooks/use-pizza-options";
 import { getPizzaDetails } from "@/shared/lib/get-pizza-details";
 
 interface Props {
   imageUrl: string;
   name: string;
-  ingredients: Ingredient[];
+  topings: Toping[];
   items: ProductItem[];
   loading?: boolean;
-  onSubmit: (itemId: number, ingredients: number[]) => void;
+  onSubmit: (itemId: number, topings: number[]) => void;
   className?: string;
 }
 
@@ -22,39 +22,36 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   name,
   items,
   imageUrl,
-  ingredients,
+  topings,
   loading,
   onSubmit,
   className,
 }) => {
-
   const {
     size,
     type,
-    selectedIngredients,
+    selectedToping,
     availableSizes,
     currentItemId,
     setSize,
     setType,
-    addIngredient,
+    addToping,
   } = usePizzaOptions(items);
-  
 
   const { totalPrice, textDetaills } = getPizzaDetails(
     type,
     size,
     items,
-    ingredients,
-    selectedIngredients,
+    topings,
+    selectedToping,
   );
 
   const handleClickAdd = () => {
     if (currentItemId) {
-      onSubmit(currentItemId, Array.from(selectedIngredients));
+      onSubmit(currentItemId, Array.from(selectedToping));
     }
   };
 
-  
   return (
     <div className={cn(className, "flex flex-1")}>
       <ProductImage imageUrl={imageUrl} size={size} />
@@ -74,20 +71,20 @@ export const ChoosePizzaForm: React.FC<Props> = ({
             items={pizzaTypes}
             selectedValue={String(type)}
             onClick={(value) => setType(Number(value) as PizzaType)}
-            />
+          />
         </div>
-       <p className="font-bold mt-6 mb-2 text-lg">Add toppings</p>
+        <p className="font-bold mt-6 mb-2 text-lg">Add toppings</p>
 
         <div className="bg-gray-50 p-5 rounded-md h-[420px] overflow-auto scrollbar mt-3">
           <div className="grid grid-cols-3 gap-3">
-            {ingredients.map((ingredient) => (
-              <IngredientItem
-                key={ingredient.id}
-                name={ingredient.name}
-                price={ingredient.price}
-                imageUrl={ingredient.imageUrl}
-                onClick={() => addIngredient(ingredient.id)}
-                active={selectedIngredients.has(ingredient.id)}
+            {topings.map((toping) => (
+              <TopingItem
+                key={toping.id}
+                name={toping.name}
+                price={toping.price}
+                imageUrl={toping.imageUrl}
+                onClick={() => addToping(toping.id)}
+                active={selectedToping.has(toping.id)}
               />
             ))}
           </div>
@@ -95,7 +92,8 @@ export const ChoosePizzaForm: React.FC<Props> = ({
         <Button
           loading={loading}
           onClick={handleClickAdd}
-          className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10">
+          className="h-[55px] px-10 text-base rounded-[18px] w-full mt-10"
+        >
           Add to cart for {totalPrice}
         </Button>
       </div>

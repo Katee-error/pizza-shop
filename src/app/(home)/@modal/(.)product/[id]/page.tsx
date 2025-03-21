@@ -9,7 +9,7 @@ export default async function ProductModalPage({ params: { id } }: { params: { i
       id: Number(id),
     },
     include: {
-      ingredients: true,
+      topings: true,
       variants: true,
     },
   });
@@ -18,5 +18,5 @@ export default async function ProductModalPage({ params: { id } }: { params: { i
     return notFound();
   }
 
-  return <ChooseProductModal product={product}/>;
+  return <ChooseProductModal product={product} />;
 }

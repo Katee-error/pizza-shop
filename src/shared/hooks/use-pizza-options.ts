@@ -1,5 +1,5 @@
 import { PizzaSize, PizzaType } from '@/shared/constants/pizza';
-import React from 'react';
+import React, { useState } from 'react';
 import { useSet } from 'react-use';
 import { ProductItem } from '@prisma/client';
 import { Variant } from '@/components/shared/product/product-details-variant';
@@ -8,18 +8,18 @@ import { getAvailablePizzaSizes } from '../lib/get-avaliable-pizza';
 interface ReturnProps {
   size: PizzaSize;
   type: PizzaType;
-  selectedIngredients: Set<number>;
+  selectedToping: Set<number>;
   availableSizes: Variant[];
   currentItemId?: number;
   setSize: (size: PizzaSize) => void;
   setType: (size: PizzaType) => void;
-  addIngredient: (id: number) => void;
+  addToping: (id: number) => void;
 }
 
 export const usePizzaOptions = (items: ProductItem[]): ReturnProps => {
-  const [size, setSize] = React.useState<PizzaSize>(30);
-  const [type, setType] = React.useState<PizzaType>(1);
-  const [selectedIngredients, { toggle: addIngredient }] = useSet(new Set<number>([]));
+  const [size, setSize] = useState<PizzaSize>(30);
+  const [type, setType] = useState<PizzaType>(1);
+  const [selectedToping, { toggle: addToping }] = useSet(new Set<number>([]));
 
   const availableSizes = getAvailablePizzaSizes(type, items);
 
@@ -39,11 +39,11 @@ export const usePizzaOptions = (items: ProductItem[]): ReturnProps => {
   return {
     size,
     type,
-    selectedIngredients,
+    selectedToping,
     availableSizes,
     currentItemId,
     setSize,
     setType,
-    addIngredient,
+    addToping,
   };
 };
