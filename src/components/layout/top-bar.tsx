@@ -3,6 +3,7 @@ import { cn } from "@/shared/lib/utils";
 import { Categories } from "../shared/categories";
 import { Container } from "./container";
 import { Category } from "@prisma/client";
+import { CartButton } from "../shared/cart";
 
 interface Props {
   className?: string;
@@ -19,7 +20,7 @@ export const TopBar: React.FC<Props> = ({ categories, className }) => {
     >
       <Container className="flex items-end justify-between ">
         <Categories items={categories} />
-
+        <CartButton />
       </Container>
     </div>
   );

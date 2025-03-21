@@ -3,8 +3,6 @@
 import { cn } from "@/shared/lib/utils";
 import React from "react";
 import { Container } from "./container";
-import Image from "next/image";
-import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { SearchInput } from "../shared/search/search-input";
@@ -15,13 +13,11 @@ import { Logo } from "./logo";
 
 interface Props {
   hasSearch?: boolean;
-  hasCart?: boolean;
   className?: string;
 }
 
 export const Header: React.FC<Props> = ({
   hasSearch = true,
-  hasCart = true,
   className,
 }) => {
   const router = useRouter();
@@ -69,8 +65,6 @@ export const Header: React.FC<Props> = ({
           />
 
           <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
-
-          {hasCart && <CartButton />}
         </div>
       </Container>
     </header>
