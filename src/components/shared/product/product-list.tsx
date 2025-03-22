@@ -50,6 +50,7 @@ export const ProductList: React.FC<Props> = ({
               price={item.variants[0].price}
               imageUrl={item.imageUrl}
               ingredients={item.ingredients ?? []}
+              description={item.description ?? undefined}
             />
           );
         })}

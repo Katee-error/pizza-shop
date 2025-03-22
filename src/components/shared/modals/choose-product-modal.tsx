@@ -68,6 +68,7 @@ export const ChooseProductModal: React.FC<ChooseProductModalProps> = ({
             price={firstItem.price}
             onSubmit={onSubmit}
             loading={loading}
+            description={product.description ?? undefined}
           />
         )}
       </DialogContent>

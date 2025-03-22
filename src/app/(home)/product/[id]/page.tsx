@@ -14,6 +14,7 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
           products: {
             include: {
               variants: true,
+              
             },
           },
         },

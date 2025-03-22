@@ -11,6 +11,7 @@ interface Props {
   price: number;
   imageUrl: string;
   ingredients?: Ingredient[];
+  description?: string | null
 }
 
 export const ProductCard: React.FC<Props> = ({
@@ -19,6 +20,7 @@ export const ProductCard: React.FC<Props> = ({
   price,
   imageUrl,
   ingredients,
+  description
 }) => {
   return (
     <div>
@@ -34,6 +36,9 @@ export const ProductCard: React.FC<Props> = ({
           <Title text={name} size="sm" className="mb-1 mt-3 font-bold" />
           <p className="text-sm text-gray-400">
             {ingredients?.map((i) => i.name).join(", ")}
+          </p>
+          <p className="text-sm text-gray-400">
+            {description}
           </p>
         </div>
 

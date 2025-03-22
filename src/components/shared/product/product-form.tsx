@@ -38,6 +38,7 @@ export const ProductForm: React.FC<Props> = ({
     }
   };
 
+
   if (isPizzaForm) {
     return (
       <ChoosePizzaForm
@@ -50,15 +51,17 @@ export const ProductForm: React.FC<Props> = ({
         loading={loading}
       />
     );
-  }
-
-  return (
+  } else {
+    return (
     <ChooseProductForm
       imageUrl={product.imageUrl}
       name={product.name}
       onSubmit={onSubmit}
       price={firstItem.price}
       loading={loading}
+      description={product.description ?? undefined}
     />
   );
+  }
+
 };
