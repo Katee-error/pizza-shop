@@ -708,27 +708,27 @@ async function up() {
     data: [
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/xep/xzh/zmc/cr4gcw0aselwvf628pbmj3j/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3101815496",
+          "https://cdn.inappstory.ru/story/8i8/xw0/cx9/bpvewqrtt8rxbmnwabwipdh/custom_cover/logo-350x440.webp?k=swIAAAAAAAAEAQ&v=2711468743",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/km2/9gf/jrn/sb7ls1yj9fe5bwvuwgym73e/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=3074015640",
+          "https://cdn.inappstory.ru/story/lxk/vfj/ls2/oeqsffpg3oegyuooj9bkitc/custom_cover/logo-350x440.webp?k=swIAAAAAAAAEAQ&v=2555955893",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/quw/acz/zf5/zu37vankpngyccqvgzbohj1/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=1336215020",
+          "https://cdn.inappstory.ru/story/fac/fsa/8ia/biv6d5iadyx3ezhsmbwdpzf/custom_cover/logo-350x440.webp?k=swIAAAAAAAAEAQ&v=3178675562",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/7oc/5nf/ipn/oznceu2ywv82tdlnpwriyrq/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=38903958",
+          "https://cdn.inappstory.ru/story/uum/fez/nwu/gcbaf4avfw260on3ermchcc/custom_cover/logo-350x440.webp?k=swIAAAAAAAAEAQ&v=4054605079",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/q0t/flg/0ph/xt67uw7kgqe9bag7spwkkyw/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=2941222737",
+          "https://cdn.inappstory.ru/story/4ka/toc/lkq/vt8wih3hcaflyd9q6hkoyni/custom_cover/logo-350x440.webp?k=tAIAAAAAAAAEAQ&v=4149849107",
       },
       {
         previewImageUrl:
-          "https://cdn.inappstory.ru/story/lza/rsp/2gc/xrar8zdspl4saq4uajmso38/custom_cover/logo-350x440.webp?k=IgAAAAAAAAAE&v=4207486284",
+          "https://cdn.inappstory.ru/story/neh/tb2/2jo/m4vcmgi3t9zdjx6hqe4gbc7/custom_cover/logo-350x440.webp?k=tAIAAAAAAAAEAQ&v=3293919429",
       },
     ],
   });
@@ -743,7 +743,7 @@ async function up() {
       {
         storyId: 1,
         sourceUrl:
-          "https://cdn.inappstory.ru/file/jv/sb/fh/io7c5zarojdm7eus0trn7czdet.webp?k=IgAAAAAAAAAE",
+          "https://cdn.inappstory.ru/file/k3/pc/et/m3j1rwacbdmzouzobriykmomqg.webp?k=swIAAAAAAAAEAQ",
       },
       {
         storyId: 1,
