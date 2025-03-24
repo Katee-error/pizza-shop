@@ -3,7 +3,7 @@ import { Footer, Header } from "@/components/layout";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "E-commerce shop",
+  title: "Pizza Pro",
   description: "Shop by your needed",
 };
 

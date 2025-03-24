@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'DODO Pizza | Корзина',
+  title: 'Pizza Pro | Cart',
 };
 
 export default function CheckoutLayout({ children }: { children: React.ReactNode }) {
