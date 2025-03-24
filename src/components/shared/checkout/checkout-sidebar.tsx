@@ -25,12 +25,12 @@ export const CheckoutSidebar: React.FC<Props> = ({
   return (
     <WhiteBlock className={cn("p-6 sticky top-4", className)}>
       <div className="flex flex-col gap-1">
-        <span className="text-xl">Итого:</span>
+        <span className="text-xl">Total:</span>
         {loading ? (
           <Skeleton className="h-11 w-48" />
         ) : (
           <span className="h-11 text-[34px] font-extrabold">
-            {totalPrice} ₽
+            {totalPrice}
           </span>
         )}
       </div>
@@ -39,14 +39,14 @@ export const CheckoutSidebar: React.FC<Props> = ({
         title={
           <div className="flex items-center">
             <Package size={18} className="mr-2 text-gray-400" />
-            Стоимость корзины:
+            Amount of the cart:
           </div>
         }
         value={
           loading ? (
             <Skeleton className="h-6 w-16 rounded-[6px]" />
           ) : (
-            `${totalAmount} ₽`
+            `${totalAmount}`
           )
         }
       />
@@ -54,14 +54,14 @@ export const CheckoutSidebar: React.FC<Props> = ({
         title={
           <div className="flex items-center">
             <Percent size={18} className="mr-2 text-gray-400" />
-            Налоги:
+            Vat:
           </div>
         }
         value={
           loading ? (
             <Skeleton className="h-6 w-16 rounded-[6px]" />
           ) : (
-            `${vatPrice} ₽`
+            `${vatPrice}`
           )
         }
       />
@@ -69,14 +69,14 @@ export const CheckoutSidebar: React.FC<Props> = ({
         title={
           <div className="flex items-center">
             <Truck size={18} className="mr-2 text-gray-400" />
-            Доставка:
+            Delivery:
           </div>
         }
         value={
           loading ? (
             <Skeleton className="h-6 w-16 rounded-[6px]" />
           ) : (
-            `${DELIVERY_PRICE} ₽`
+            `${DELIVERY_PRICE} `
           )
         }
       />
@@ -86,7 +86,7 @@ export const CheckoutSidebar: React.FC<Props> = ({
         type="submit"
         className="w-full h-14 rounded-2xl mt-6 text-base font-bold"
       >
-        Перейти к оплате
+       Go to payment
         <ArrowRight className="w-5 ml-2" />
       </Button>
     </WhiteBlock>

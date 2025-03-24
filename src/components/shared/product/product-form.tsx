@@ -29,11 +29,11 @@ export const ProductForm: React.FC<Props> = ({
         topings: topings ?? [],
       });
 
-      toast.success(product.name + " добавлена в корзину");
+      toast.success(product.name + "add to cart");
 
       _onSubmit?.();
     } catch (err) {
-      toast.error("Не удалось добавить товар в корзину");
+      toast.error("Failed to add item to cart");
       console.error(err);
     }
   };
